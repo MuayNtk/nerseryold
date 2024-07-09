@@ -1,0 +1,12 @@
+{
+    "menu":{
+        "home":"Home",
+        "teacher":"Teacher",
+        "student":"Student",
+        "accounting":"Accounting",
+        "listteacher":"Listteachet",
+        "system":"System Setting",
+        "class":"Class"
+    },
+    "home":"ホーム"
+}

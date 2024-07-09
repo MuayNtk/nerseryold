@@ -1,0 +1,30 @@
+{
+    "menu":{
+        "home":"ホーム",
+        "teacher":"保育士",
+        "student":"園児管理",
+        "accounting":"経理",
+        "listteacher":"職員リスト",
+        "class":"クラス管理",
+        "nurseryinfo":"基本情報",
+        "organizer":"役員情報",
+        "setting":"マスタ設定",
+        "todolist":"業務",
+        "leave":"休暇届",
+        "overtime":"残業",
+        "report":"レポート管理"
+    },
+    "navbar":{
+        "usermenu":{
+            "profile":"プロフィール",
+            "chgpwd":"パスワード変更"
+        },
+        "setting":"設定",
+        "logout":"ログアウト",
+        "noti":"やることリスト"
+    },
+    "breadcrumb":{
+        "home":"ホーム"
+    },
+    "footer":"MySUCU ©2024 Created by Japan System"
+}

@@ -1,0 +1,20 @@
+{
+    "nurseryProvince":"福岡市",
+    "nurseryID":"566",
+    "nurseryName":"いちざきみんなの家",
+    "nurseryAddress":{
+        "building":"いちざきみんなの家",
+        "adress":"福岡県福岡市南区市崎1-15-11",
+        "zipcode":"815-0084"
+    },
+    "nurseryContact":{
+        "phone":"092-406-8215",
+        "email":"info-ichizaki@tsubasa-f.or.jp"
+    },
+    "legalName":"社会福祉法人つばさ福祉会",
+    "legalAddress":{
+        "building":"社会福祉法人つばさ福祉会",
+        "adress":"宮崎県西都市白馬町３番地",
+        "zipcode":"881-0032"
+    }
+}
