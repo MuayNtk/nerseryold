@@ -77,10 +77,14 @@ const SideLayout: React.FC = () => {
         }
         path = key[val]+path;
       }
-      window.location.assign('http://localhost:3000/'+path);
-      return false;
       
+      const isLocalhost = window.location.hostname === 'localhost';
+      const baseUrl = isLocalhost ? 'http://localhost:3000' : window.location.origin;
+      
+      window.location.assign(`${baseUrl}/${path}`);
+      return false;
     }
+    
 
     return (
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
