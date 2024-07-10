@@ -83,19 +83,24 @@ const SideLayout: React.FC = () => {
     // }
     function menuClick(key: string[]) {
       let path = "";
-      for (let val in key) {
+      for (let val of key) {
         if (path != "") {
           path = "/" + path;
         }
-        path = key[val] + path;
+        path = val + path;
       }
-      
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-      
+    
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || window.location.origin;
+    
       console.log(`Base URL: ${baseUrl}`);
       console.log(`Path: ${path}`);
       
-      window.location.assign(`${baseUrl}/${path}`);
+      if (baseUrl && path) {
+        window.location.assign(`${baseUrl}/${path}`);
+      } else {
+        console.error("Base URL or Path is undefined");
+      }
+      
       return false;
     }
     
