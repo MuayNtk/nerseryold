@@ -10,7 +10,7 @@ import {
   MailOutlined,
   ClockCircleOutlined,
 } from '@ant-design/icons';
-import t from "@/app/locales/jp/common.json";//import language
+import t from "@/app/locales/jp/common.json"; // import language
 import { Breadcrumb, Layout, theme, Row, Col, Button } from 'antd';
 import SideLayout from './ui/sidelayout';
 import NavBar from './ui/navbar';
@@ -23,11 +23,13 @@ const bcList = [
     href: '',
     title: <HomeOutlined />,
   },
-  {title: t.menu.home},
+  { title: t.menu.home },
 ];
 
-function redirection (path:string){
-  window.location.assign("http://localhost:3000/"+path);
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+function redirection(path: string) {
+  window.location.assign(`${BASE_URL}/${path}`);
   return false;
 }
 
@@ -54,26 +56,25 @@ const App: React.FC = () => {
             <>
               <Row gutter={[30, 30]}>
                 <Col span="6">
-                <Button block type="primary" size="large" icon={<UserAddOutlined />} onClick={(e) => redirection("teacher/todolist")}>保育士登録</Button>
+                  <Button block type="primary" size="large" icon={<UserAddOutlined />} onClick={() => redirection("teacher/todolist")}>保育士登録</Button>
                 </Col>
                 <Col span="6">
-                <Button block type="primary" size="large" icon={<UserAddOutlined />} onClick={(e) => redirection("student")}>園児登録</Button>
+                  <Button block type="primary" size="large" icon={<UserAddOutlined />} onClick={() => redirection("student")}>園児登録</Button>
                 </Col>
                 <Col span="6">
-                <Button block type="primary" size="large" icon={<TeamOutlined />} onClick={(e) => redirection("setting/class")}>クラス登録</Button>
+                  <Button block type="primary" size="large" icon={<TeamOutlined />} onClick={() => redirection("setting/class")}>クラス登録</Button>
                 </Col>
                 <Col span="6">
-                <Button block disabled type="primary" size="large" icon={<ClockCircleOutlined />} onClick={(e) => redirection("")}>登降園記録</Button>
-                </Col>
-                
-                <Col span="6">
-                <Button block disabled type="primary" size="large" icon={<SnippetsOutlined />} onClick={(e) => redirection("")}>日誌登録</Button>
+                  <Button block disabled type="primary" size="large" icon={<ClockCircleOutlined />} onClick={() => redirection("")}>登降園記録</Button>
                 </Col>
                 <Col span="6">
-                <Button block disabled type="primary" size="large" icon={<WarningOutlined />} onClick={(e) => redirection("")}>事故登録</Button>
+                  <Button block disabled type="primary" size="large" icon={<SnippetsOutlined />} onClick={() => redirection("")}>日誌登録</Button>
                 </Col>
                 <Col span="6">
-                <Button block disabled type="primary" size="large" icon={<MailOutlined />} onClick={(e) => redirection("")}>メッセージ配信</Button>
+                  <Button block disabled type="primary" size="large" icon={<WarningOutlined />} onClick={() => redirection("")}>事故登録</Button>
+                </Col>
+                <Col span="6">
+                  <Button block disabled type="primary" size="large" icon={<MailOutlined />} onClick={() => redirection("")}>メッセージ配信</Button>
                 </Col>
               </Row>
             </>
@@ -85,4 +86,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App; 
+export default App;
