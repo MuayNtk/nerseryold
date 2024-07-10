@@ -48,8 +48,8 @@ const boxStyle: React.CSSProperties = {
 const items: MenuItem[] = [
   getItem(t.menu.home, '', <PieChartOutlined />),
   getItem(t.menu.teacher, 'teacher', <TeamOutlined />, [
-    getItem(t.menu.todolist, 'todolist', <ApartmentOutlined />),
-    getItem(t.menu.leave, 'leave', <ApartmentOutlined />),
+    getItem(t.menu.todolist, 'teacher/todolist', <ApartmentOutlined />),
+    getItem(t.menu.leave, 'teacher/leave', <ApartmentOutlined />),
     // getItem(t.menu.overtime, 'overtime', <ApartmentOutlined />),
   ]),
   getItem(t.menu.student, 'student', <TeamOutlined />),
@@ -58,8 +58,8 @@ const items: MenuItem[] = [
   getItem(t.menu.listteacher, 'listteacher',  <UserAddOutlined />),
   getItem(t.menu.report, 'report',  <BookOutlined />),
   getItem(t.menu.setting, 'setting', <SettingFilled />, [
-    getItem(t.menu.nurseryinfo, 'nurseryinfo', <ApartmentOutlined />),
-    getItem(t.menu.organizer, 'organizer', <ApartmentOutlined />),
+    getItem(t.menu.nurseryinfo, 'setting/nurseryinfo', <ApartmentOutlined />),
+    getItem(t.menu.organizer, 'setting/organizer', <ApartmentOutlined />),
   ]),
 ];
 
