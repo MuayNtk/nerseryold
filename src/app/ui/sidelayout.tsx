@@ -69,17 +69,31 @@ const SideLayout: React.FC = () => {
   }
     const [collapsed, setCollapsed] = useState(false);
 
-    function menuClick(key:string[]){
+    // function menuClick(key:string[]){
+    //   let path = "";
+    //   for(let val in key){
+    //     if(path != ""){
+    //       path = "/"+path;
+    //     }
+    //     path = key[val]+path;
+    //   }
+    //   window.location.assign('http://localhost:3000/'+path);
+    //   return false;
+      
+    // }
+    function menuClick(key: string[]) {
       let path = "";
-      for(let val in key){
-        if(path != ""){
-          path = "/"+path;
+      for (let val in key) {
+        if (path != "") {
+          path = "/" + path;
         }
-        path = key[val]+path;
+        path = key[val] + path;
       }
       
-      const isLocalhost = window.location.hostname === 'localhost';
-      const baseUrl = isLocalhost ? 'http://localhost:3000' : window.location.origin;
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      
+      console.log(`Base URL: ${baseUrl}`);
+      console.log(`Path: ${path}`);
       
       window.location.assign(`${baseUrl}/${path}`);
       return false;
