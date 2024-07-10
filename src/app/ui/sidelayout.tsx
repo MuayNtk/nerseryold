@@ -69,41 +69,18 @@ const SideLayout: React.FC = () => {
   }
     const [collapsed, setCollapsed] = useState(false);
 
-    // function menuClick(key:string[]){
-    //   let path = "";
-    //   for(let val in key){
-    //     if(path != ""){
-    //       path = "/"+path;
-    //     }
-    //     path = key[val]+path;
-    //   }
-    //   window.location.assign('http://localhost:3000/'+path);
-    //   return false;
-      
-    // }
-    function menuClick(key: string[]) {
+    function menuClick(key:string[]){
       let path = "";
-      for (let val of key) {
-        if (path != "") {
-          path = "/" + path;
+      for(let val in key){
+        if(path != ""){
+          path = "/"+path;
         }
-        path = val + path;
+        path = key[val]+path;
       }
-    
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || window.location.origin;
-    
-      console.log(`Base URL: ${baseUrl}`);
-      console.log(`Path: ${path}`);
-      
-      if (baseUrl && path) {
-        window.location.assign(`${baseUrl}/${path}`);
-      } else {
-        console.error("Base URL or Path is undefined");
-      }
-      
+      window.location.assign('http://localhost:3000/'+path);
       return false;
+      
     }
-    
 
     return (
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
